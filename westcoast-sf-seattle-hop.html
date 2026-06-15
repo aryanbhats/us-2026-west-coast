@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West Coast 2026 — San Francisco + Seattle · Aug 24–Sep 5</title>
+<script src="assets/mermaid.min.js"></script>
+<style>
+:root{--bg:#0c0e11;--bg2:#13161b;--card:#161a20;--card2:#1c212a;--ink:#e9ecf1;--muted:#9aa3b0;
+--faint:#6b7480;--line:#262c35;--food:#e7a14a;--see:#5fb0e6;--do:#7fd1a3;--getting:#c98fe0;--climate:#6fd4d0;
+--easy:#7fd1a3;--medium:#e7c84a;--haul:#e8746b;--base:#5fb0e6;--base2:#c98fe0;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:"Helvetica Neue",Inter,system-ui,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:var(--see)}
+.hero{position:relative;padding:80px 24px 54px;text-align:center;border-bottom:1px solid var(--line);
+background:radial-gradient(1100px 460px at 50% -10%,rgba(95,176,230,.16),transparent 60%),
+radial-gradient(800px 400px at 14% 6%,rgba(127,209,163,.10),transparent 55%),
+radial-gradient(800px 400px at 86% 4%,rgba(201,143,224,.10),transparent 55%),linear-gradient(180deg,#0a0c0f,#0c0e11)}
+.kicker{font-size:12.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--see);font-weight:600;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,7vw,76px);line-height:1.03;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--food)}
+.hero .sub{margin:22px auto 0;max-width:680px;color:var(--muted);font-size:16.5px}
+.frame{margin:26px auto 0;max-width:820px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.chip{font-size:12.5px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.chip b{color:var(--see)}
+.trains{display:inline-flex;gap:7px;margin-top:22px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+color:var(--do);border:1px solid rgba(127,209,163,.35);border-radius:999px;padding:8px 17px;background:rgba(127,209,163,.07);font-weight:600}
+.switch{display:inline-flex;gap:7px;margin:22px 0 0 10px;font-size:12.5px;letter-spacing:.06em;
+color:var(--getting);border:1px solid rgba(201,143,224,.35);border-radius:999px;padding:8px 17px;background:rgba(201,143,224,.07);font-weight:600;text-decoration:none}
+.band{max-width:1180px;margin:0 auto;padding:40px 24px 6px}
+.band h3.sec{font-family:var(--serif);font-weight:500;font-size:27px;margin-bottom:6px}
+.band p.lead{color:var(--muted);font-size:15px;max-width:820px;margin-bottom:18px}
+.hub{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:14px 10px 6px;overflow-x:auto}
+.hub .mermaid{min-width:680px}
+.legend{display:flex;flex-wrap:wrap;gap:14px 22px;margin:18px 0 2px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+.legend .g{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.leaf{letter-spacing:1px;font-size:12px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.pill.easy{background:rgba(127,209,163,.14);color:var(--easy);border:1px solid rgba(127,209,163,.3)}
+.pill.medium{background:rgba(231,200,74,.13);color:var(--medium);border:1px solid rgba(231,200,74,.3)}
+.pill.haul{background:rgba(232,116,107,.13);color:var(--haul);border:1px solid rgba(232,116,107,.3)}
+.pill.base{background:rgba(95,176,230,.14);color:var(--base);border:1px solid rgba(95,176,230,.3)}
+.grid{max-width:1320px;margin:6px auto 0;padding:18px 24px 30px;display:grid;
+grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;
+display:flex;flex-direction:column;transition:transform .22s,border-color .22s;outline:none}
+.card:hover,.card:focus{transform:translateY(-4px);border-color:#3a4350}
+.card-img{position:relative;height:210px;background:var(--card2)}
+.card-img img{transition:transform .6s}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-num{position:absolute;top:12px;left:12px;font-family:var(--serif);font-size:13px;background:rgba(8,10,13,.7);
+border:1px solid var(--line);border-radius:8px;padding:2px 9px}
+.card-cool{position:absolute;top:11px;right:12px;background:rgba(8,10,13,.7);border-radius:999px;padding:3px 9px;font-size:12px}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.card-tit{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.card-tit h2{font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.1}
+.card-tit .jp{color:var(--faint);font-size:11.5px}
+.card-hook{color:var(--muted);font-size:13.5px;flex:1}
+.card-foot{display:flex;align-items:center;gap:10px;margin-top:4px;padding-top:12px;border-top:1px solid var(--line)}
+.ftime{font-size:12.5px;color:var(--faint)}
+.more{margin-left:auto;font-size:12px;color:var(--see)}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(6,8,11,.78);backdrop-filter:blur(4px);
+display:none;padding:36px 18px;overflow-y:auto}
+.modal.open{display:block}
+.modal-inner{max-width:1040px;margin:0 auto;background:var(--bg2);border:1px solid var(--line);
+border-radius:18px;padding:30px 32px 38px;position:relative}
+.mclose{position:absolute;top:16px;right:18px;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);
+background:var(--card);color:var(--ink);font-size:22px;cursor:pointer;line-height:1}
+.mclose:hover{border-color:#4a5462}
+.mkick{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--see);font-weight:600}
+.modal-head h2{font-family:var(--serif);font-weight:500;font-size:34px;margin:6px 0 4px}
+.modal-head h2 .jp{font-size:16px;color:var(--faint)}
+.mhook{color:var(--muted);font-size:15.5px;font-family:var(--serif);font-style:italic;max-width:680px}
+.flowwrap{margin:24px 0 6px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.flowlabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.flowwrap .mermaid.flow{text-align:center;min-height:40px}
+.flowwrap .mermaid.flow svg{max-width:100%;height:auto;margin:0 auto}
+.info{margin:22px 0 8px;display:flex;flex-direction:column;gap:1px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.irow{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:13px 16px;background:var(--card);font-size:14px;align-items:start}
+.ikey{position:relative;padding-top:7px}
+.ikey::before{content:"";position:absolute;left:0;top:5px;width:7px;height:7px;border-radius:2px;background:var(--see)}
+.ival{color:var(--muted)}
+.galh{font-family:var(--serif);font-weight:500;font-size:20px;margin:26px 0 14px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tile{position:relative;border-radius:11px;overflow:hidden;cursor:zoom-in;background:var(--card2);aspect-ratio:4/3}
+.tile img{transition:transform .5s}
+.tile:hover img{transform:scale(1.06)}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;font-size:11.5px;line-height:1.35;color:#fff;
+padding:18px 11px 9px;background:linear-gradient(0deg,rgba(5,7,10,.92),transparent);opacity:0;transition:opacity .25s}
+.tile:hover figcaption{opacity:1}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(4,6,9,.93);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;flex-direction:column;gap:14px}
+.lb.open{display:flex}
+.lb img{max-width:94vw;max-height:82vh;width:auto;height:auto;border-radius:8px;object-fit:contain}
+.lb p{color:var(--muted);font-size:13.5px;max-width:760px;text-align:center}
+.timeline{max-width:880px;margin:6px auto 0}
+.tnode{display:grid;grid-template-columns:58px 22px 1fr;gap:14px;align-items:stretch}
+.tnode.link{cursor:pointer}
+.tdate{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:2px}
+.tmon{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.tday{font-family:var(--serif);font-size:26px;line-height:1}
+.tdow{font-size:11px;color:var(--faint)}
+.tline{display:flex;justify-content:center;position:relative}
+.tline::before{content:"";position:absolute;top:8px;bottom:-14px;width:2px;background:var(--line)}
+.tnode:last-child .tline::before{display:none}
+.tdot{width:13px;height:13px;border-radius:50%;margin-top:6px;z-index:1;border:2px solid var(--bg)}
+.tdot.base{background:var(--base)} .tdot.easy{background:var(--easy)}
+.tdot.medium{background:var(--medium)} .tdot.haul{background:var(--getting)}
+.tbody{padding:0 0 22px}
+.ttop{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:5px}
+.ttop h4{font-family:var(--serif);font-weight:500;font-size:18px}
+.tbody p{color:var(--muted);font-size:13.5px;max-width:680px}
+.tmore{display:inline-block;margin-top:7px;font-size:12px;color:var(--see)}
+.tnode.link:hover .ttop h4{color:var(--see)}
+.tablewrap{max-width:1100px;margin:30px auto 40px;padding:0 24px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+thead th{background:var(--bg2);text-align:left;padding:12px 14px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line)}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:middle}
+tbody tr{cursor:pointer} tbody tr:hover td{background:rgba(255,255,255,.02)}
+tbody tr:last-child td{border-bottom:none}
+.muted{color:var(--faint)}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:34px 24px 70px;text-align:center;color:var(--faint);font-size:12px}
+footer .credits{max-width:900px;margin:14px auto 0;columns:2;column-gap:30px;text-align:left;list-style:none;font-size:11.5px;line-height:1.7}
+@media(max-width:640px){footer .credits{columns:1} .dcard img{width:96px}}
+@media(max-width:560px){.tnode{grid-template-columns:46px 18px 1fr;gap:10px} .tday{font-size:22px}}
+</style></head>
+<body>
+
+<div class="hero">
+  <div class="kicker">Plan B · San Francisco + Seattle · 6 + 6 nights</div>
+  <h1>The <em>cool coast</em>, two cities</h1>
+  <p class="sub">Six nights in foggy San Francisco, one short hop north, then six in mild-and-dry Seattle — the Bay and the Pacific Northwest in one trip, with one easy flight in the middle and no back-to-back hauls.</p>
+  <div class="frame"><span class="chip"><b>Bases</b> SF 6 nts → Seattle 6 nts</span><span class="chip"><b>When</b> Aug 24 – Sep 5</span><span class="chip"><b>Who</b> Aryan + Jean + Saurav</span><span class="chip"><b>Pace</b> active but lazy</span><span class="chip"><b>Air</b> cool &amp; dry throughout</span></div>
+  <div><span class="trains">🚆 Ferries &amp;amp; transit + one short flight</span><a class="switch" href="westcoast-sf-single.html">↔ see the other plan</a></div>
+</div>
+
+<div class="band">
+  <h3 class="sec">Two hubs, two fans of day trips</h3>
+  <p class="lead">San Francisco for the first half, Seattle for the second — each its own base with car-free (or easy-tour) day trips hanging off it. One ~2-hour flight links them. Greener leaf = cooler.</p>
+  <div class="hub">
+    <pre class="mermaid">
+flowchart LR
+    sanfrancisco(("San Francisco<br/>6 nights")):::base
+    sanfrancisco --->|"Ferry ~30 min · easy"| sausalito_muirwoods["Sausalito & Muir Woods"]
+    sanfrancisco --->|"Tour ~1h transfer · some transit"| winecountry["Wine Country"]
+    sanfrancisco --->|"BART ~30 min · easy"| berkeley["Berkeley"]
+    seattle(("Seattle<br/>6 nights")):::base2
+    seattle --->|"Ferry 35 min walk-on · easy"| bainbridge["Bainbridge Island"]
+    seattle --->|"Tour ~2.5h each way · a haul"| mountrainier["Mount Rainier"]
+    seattle --->|"~45 min / half-day tour · some transit"| snoqualmie["Snoqualmie Falls"]
+    seattle --->|"Tour / ferry+bus ~3h+ · a haul"| olympic["Olympic National Park"]
+    class sausalito_muirwoods c4;
+    class winecountry c2;
+    class berkeley c3;
+    class bainbridge c4;
+    class mountrainier c4;
+    class snoqualmie c3;
+    class olympic c4;
+    classDef base fill:#13344a,stroke:#5fb0e6,stroke-width:2px,color:#eaf4fb,font-weight:bold;
+    classDef base2 fill:#3a2a4a,stroke:#c98fe0,stroke-width:2px,color:#f3e7fb,font-weight:bold;
+    classDef c1 fill:#2a2520,stroke:#e7a14a,color:#f3e7d8;
+    classDef c2 fill:#1f2a30,stroke:#6f9fc0,color:#e3eef5;
+    classDef c3 fill:#163029,stroke:#5fb88f,color:#dff3ea;
+    classDef c4 fill:#123038,stroke:#54c8d0,color:#dbf5f6;
+    </pre>
+  </div>
+  <div class="legend">
+    <span class="g"><span class="pill easy">easy</span> ferry / one transit hop</span>
+    <span class="g"><span class="pill medium">some transit</span> a transfer or a tour</span>
+    <span class="g"><span class="pill haul">a haul</span> long day / needs a tour</span>
+    <span class="g">🌿 mild → 🌿🌿🌿🌿 coolest</span>
+  </div>
+</div>
+
+<div class="band" style="padding-top:14px">
+  <h3 class="sec">The places</h3>
+  <p class="lead">Two home bases and seven day trips between them. Late-summer photos only — both cities run cool and dry into early September.</p>
+</div>
+<div class="grid">
+        <article class="card" data-slug="sanfrancisco" onclick="openLoc('sanfrancisco')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('sanfrancisco')">
+          <div class="card-img"><img loading="lazy" src="assets/img/sanfrancisco/01.jpg" alt="San Francisco">
+            <span class="card-num">01</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>San Francisco</h2><span class="jp">home base</span></div>
+            <p class="card-hook">Cool, fog-cooled summer days where a sweater beats any sunscreen.</p>
+            <div class="card-foot">
+              <span class="pill base">home base</span>
+              <span class="ftime">Home base</span>
+              <span class="more">12 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="sausalito-muirwoods" onclick="openLoc('sausalito-muirwoods')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('sausalito-muirwoods')">
+          <div class="card-img"><img loading="lazy" src="assets/img/sausalito-muirwoods/01.jpg" alt="Sausalito &amp; Muir Woods">
+            <span class="card-num">02</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Sausalito &amp; Muir Woods</h2><span class="jp">ferry + redwoods</span></div>
+            <p class="card-hook">A bay ferry to cathedral redwoods, then a harbor lunch facing the skyline.</p>
+            <div class="card-foot">
+              <span class="pill easy">easy</span>
+              <span class="ftime">Ferry ~30 min</span>
+              <span class="more">11 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="winecountry" onclick="openLoc('winecountry')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('winecountry')">
+          <div class="card-img"><img loading="lazy" src="assets/img/winecountry/01.jpg" alt="Wine Country">
+            <span class="card-num">03</span>
+            <span class="card-cool"><span class="leaf">🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Wine Country</h2><span class="jp">Sonoma · Napa</span></div>
+            <p class="card-hook">Sun-warmed vines, slow pours, harvest in the air — the trip&#x27;s pure downtime day.</p>
+            <div class="card-foot">
+              <span class="pill medium">some transit</span>
+              <span class="ftime">Tour ~1h transfer</span>
+              <span class="more">10 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="berkeley" onclick="openLoc('berkeley')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('berkeley')">
+          <div class="card-img"><img loading="lazy" src="assets/img/berkeley/01.jpg" alt="Berkeley">
+            <span class="card-num">04</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Berkeley</h2><span class="jp">BART · California cuisine</span></div>
+            <p class="card-hook">Campus strolls, hilltop bay views, and the birthplace of California cuisine.</p>
+            <div class="card-foot">
+              <span class="pill easy">easy</span>
+              <span class="ftime">BART ~30 min</span>
+              <span class="more">10 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="seattle" onclick="openLoc('seattle')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('seattle')">
+          <div class="card-img"><img loading="lazy" src="assets/img/seattle/01.jpg" alt="Seattle">
+            <span class="card-num">05</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Seattle</h2><span class="jp">home base 2</span></div>
+            <p class="card-hook">A mild, dry, sun-washed bay city — coffee, ferries and mountain skylines.</p>
+            <div class="card-foot">
+              <span class="pill base">home base</span>
+              <span class="ftime">Home base</span>
+              <span class="more">13 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="bainbridge" onclick="openLoc('bainbridge')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('bainbridge')">
+          <div class="card-img"><img loading="lazy" src="assets/img/bainbridge/01.jpg" alt="Bainbridge Island">
+            <span class="card-num">06</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Bainbridge Island</h2><span class="jp">ferry day</span></div>
+            <p class="card-hook">A skyline-and-Sound ferry glide to a strollable little island town.</p>
+            <div class="card-foot">
+              <span class="pill easy">easy</span>
+              <span class="ftime">Ferry 35 min walk-on</span>
+              <span class="more">10 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="mountrainier" onclick="openLoc('mountrainier')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('mountrainier')">
+          <div class="card-img"><img loading="lazy" src="assets/img/mountrainier/01.jpg" alt="Mount Rainier">
+            <span class="card-num">07</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Mount Rainier</h2><span class="jp">alpine marquee</span></div>
+            <p class="card-hook">A glacier giant and wildflower meadows — the jaw-drop view without the climb.</p>
+            <div class="card-foot">
+              <span class="pill haul">a haul</span>
+              <span class="ftime">Tour ~2.5h each way</span>
+              <span class="more">10 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="snoqualmie" onclick="openLoc('snoqualmie')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('snoqualmie')">
+          <div class="card-img"><img loading="lazy" src="assets/img/snoqualmie/01.jpg" alt="Snoqualmie Falls">
+            <span class="card-num">08</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Snoqualmie Falls</h2><span class="jp">waterfall half-day</span></div>
+            <p class="card-hook">A 268-ft thundering plunge, damn fine pie, and a little Twin Peaks magic.</p>
+            <div class="card-foot">
+              <span class="pill medium">some transit</span>
+              <span class="ftime">~45 min / half-day tour</span>
+              <span class="more">10 photos →</span>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-slug="olympic" onclick="openLoc('olympic')" tabindex="0"
+                 onkeydown="if(event.key==='Enter')openLoc('olympic')">
+          <div class="card-img"><img loading="lazy" src="assets/img/olympic/01.jpg" alt="Olympic National Park">
+            <span class="card-num">09</span>
+            <span class="card-cool"><span class="leaf">🌿🌿🌿🌿</span></span>
+          </div>
+          <div class="card-body">
+            <div class="card-tit"><h2>Olympic National Park</h2><span class="jp">wild &amp; far (we checked)</span></div>
+            <p class="card-hook">Glacier peaks, moss-draped rainforest, turquoise lakes — the wild crown jewel.</p>
+            <div class="card-foot">
+              <span class="pill haul">a haul</span>
+              <span class="ftime">Tour / ferry+bus ~3h+</span>
+              <span class="more">10 photos →</span>
+            </div>
+          </div>
+        </article></div>
+
+<div class="band">
+  <h3 class="sec">How the days could flow</h3>
+  <p class="lead">Six Bay nights, a short midday hop, six Seattle nights. The one real haul (Rainier) sits between easy days; the hop day doubles as a gentle Pike Place afternoon.</p>
+  <div class="timeline"><div class="tnode" >
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">24</span><span class="tdow">Mon</span></div>
+            <div class="tline"><span class="tdot base"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill base">Arrive</span><h4>Arrive — converge on San Francisco</h4></div>
+              <p>Aryan in from Toronto (with Saurav if he's stayed in Toronto through August); Jean joins from her US work trip — no HK haul. Check in for 6 nights. Easy first night.</p>
+            </div></div><div class="tnode link" onclick="openLoc('sanfrancisco')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">25</span><span class="tdow">Tue</span></div>
+            <div class="tline"><span class="tdot base"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill base">City day</span><h4>San Francisco, slowly</h4></div>
+              <p>Ferry Building, cable car, the Embarcadero, sourdough and coffee. Cool and foggy — find your café. Settle in.</p><span class="tmore">San Francisco gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('sausalito-muirwoods')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">26</span><span class="tdow">Wed</span></div>
+            <div class="tline"><span class="tdot medium"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill medium">Day trip</span><h4>Sausalito &amp; Muir Woods</h4></div>
+              <p>Walk-on ferry, the flat redwood boardwalk (reserve the shuttle), harbor lunch in Sausalito with the skyline across the bay.</p><span class="tmore">Sausalito &amp; Muir Woods gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('winecountry')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">27</span><span class="tdow">Thu</span></div>
+            <div class="tline"><span class="tdot medium"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill medium">Day trip</span><h4>Wine Country — the downtime day</h4></div>
+              <p>A guided day into Napa or Sonoma — no one drives. Tastings, a long vineyard lunch, harvest season. The trip's most relaxing day.</p><span class="tmore">Wine Country gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('berkeley')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">28</span><span class="tdow">Fri</span></div>
+            <div class="tline"><span class="tdot medium"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill medium">Day trip</span><h4>Berkeley — campus &amp; California cuisine</h4></div>
+              <p>A 30-min BART hop: the Campanile view, the Gourmet Ghetto for lunch, Indian Rock at sunset. Easy food-and-views.</p><span class="tmore">Berkeley gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('sanfrancisco')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">29</span><span class="tdow">Sat</span></div>
+            <div class="tline"><span class="tdot easy"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill easy">Slow day</span><h4>Slow SF — last Bay day</h4></div>
+              <p>Golden Gate Park, the Presidio, a final great Bay-Area meal. Pack tonight for an easy hop tomorrow.</p><span class="tmore">San Francisco gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('seattle')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">30</span><span class="tdow">Sun</span></div>
+            <div class="tline"><span class="tdot haul"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill haul">Transfer</span><h4>Hop to Seattle ✈ (≈2 h)</h4></div>
+              <p>A short morning flight SFO→SEA, no time-zone change. Drop bags, then walk Pike Place Market and the new waterfront Overlook Walk. New base, second city, unpack for 6 nights.</p><span class="tmore">Seattle gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('seattle')">
+            <div class="tdate"><span class="tmon">Aug</span><span class="tday">31</span><span class="tdow">Mon</span></div>
+            <div class="tline"><span class="tdot base"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill base">City day</span><h4>Seattle, slowly</h4></div>
+              <p>Pike Place mornings, the waterfront, Kerry Park's skyline-and-Rainier view, coffee and seafood. Mild, dry, early-September perfection.</p><span class="tmore">Seattle gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('bainbridge')">
+            <div class="tdate"><span class="tmon">Sep</span><span class="tday">01</span><span class="tdow">Tue</span></div>
+            <div class="tline"><span class="tdot medium"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill medium">Day trip</span><h4>Bainbridge Island — ferry day</h4></div>
+              <p>The easiest, most scenic day on the board: a 35-minute walk-on ferry with skyline and Olympic-mountain views, then walkable Winslow town — lunch, a tasting room, the waterfront. Cool Sound air.</p><span class="tmore">Bainbridge Island gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('mountrainier')">
+            <div class="tdate"><span class="tmon">Sep</span><span class="tday">02</span><span class="tdow">Wed</span></div>
+            <div class="tline"><span class="tdot medium"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill medium">Day trip</span><h4>Mount Rainier — the marquee</h4></div>
+              <p>HAUL (worth it). A small-group day tour to Paradise: wildflower-and-glacier meadows, easy paved trails for the parents, Myrtle Falls and Reflection Lakes. Cool alpine air. (Swap to Olympic if you'd rather — see the card.)</p><span class="tmore">Mount Rainier gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('seattle')">
+            <div class="tdate"><span class="tmon">Sep</span><span class="tday">03</span><span class="tdow">Thu</span></div>
+            <div class="tline"><span class="tdot easy"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill easy">Slow day</span><h4>Slow Seattle — recover &amp; roam</h4></div>
+              <p>A do-nothing day after the mountain: Discovery Park, Ballard or Fremont, a brewery, the Chihuly glass garden. Earned downtime.</p><span class="tmore">Seattle gallery →</span>
+            </div></div><div class="tnode link" onclick="openLoc('snoqualmie')">
+            <div class="tdate"><span class="tmon">Sep</span><span class="tday">04</span><span class="tdow">Fri</span></div>
+            <div class="tline"><span class="tdot medium"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill medium">Day trip</span><h4>Snoqualmie Falls — easy finale</h4></div>
+              <p>A relaxed half-day to the 268-ft falls and Salish Lodge (the Twin Peaks 'Great Northern'), cherry pie in North Bend, back by afternoon for a last Seattle dinner.</p><span class="tmore">Snoqualmie Falls gallery →</span>
+            </div></div><div class="tnode" >
+            <div class="tdate"><span class="tmon">Sep</span><span class="tday">05</span><span class="tdow">Sat</span></div>
+            <div class="tline"><span class="tdot haul"></span></div>
+            <div class="tbody">
+              <div class="ttop"><span class="pill haul">Transfer</span><h4>Fly home</h4></div>
+              <p>Depart SEA. Aryan (and maybe Saurav) to Toronto; Jean onward; Saurav to Singapore if not routing via Toronto.</p>
+            </div></div></div>
+</div>
+
+<div class="tablewrap">
+  <h3 class="sec" style="font-family:var(--serif);font-weight:500;font-size:27px;margin-bottom:14px">At a glance</h3>
+  <table>
+    <thead><tr><th>Place</th><th>Getting there</th><th>Ease</th><th>Coolness</th><th>Gallery</th></tr></thead>
+    <tbody><tr onclick="openLoc('sanfrancisco')">
+          <td><b>San Francisco</b></td><td>Home base</td>
+          <td><span class="pill base">home base</span></td>
+          <td><span class="leaf">🌿🌿🌿🌿</span> <span class="muted">coolest</span></td>
+          <td class="muted">12 photos</td></tr><tr onclick="openLoc('sausalito-muirwoods')">
+          <td><b>Sausalito &amp; Muir Woods</b></td><td>Ferry ~30 min</td>
+          <td><span class="pill easy">easy</span></td>
+          <td><span class="leaf">🌿🌿🌿🌿</span> <span class="muted">coolest</span></td>
+          <td class="muted">11 photos</td></tr><tr onclick="openLoc('winecountry')">
+          <td><b>Wine Country</b></td><td>Tour ~1h transfer</td>
+          <td><span class="pill medium">some transit</span></td>
+          <td><span class="leaf">🌿🌿</span> <span class="muted">cool</span></td>
+          <td class="muted">10 photos</td></tr><tr onclick="openLoc('berkeley')">
+          <td><b>Berkeley</b></td><td>BART ~30 min</td>
+          <td><span class="pill easy">easy</span></td>
+          <td><span class="leaf">🌿🌿🌿</span> <span class="muted">cooler</span></td>
+          <td class="muted">10 photos</td></tr><tr onclick="openLoc('seattle')">
+          <td><b>Seattle</b></td><td>Home base</td>
+          <td><span class="pill base">home base</span></td>
+          <td><span class="leaf">🌿🌿🌿🌿</span> <span class="muted">coolest</span></td>
+          <td class="muted">13 photos</td></tr><tr onclick="openLoc('bainbridge')">
+          <td><b>Bainbridge Island</b></td><td>Ferry 35 min walk-on</td>
+          <td><span class="pill easy">easy</span></td>
+          <td><span class="leaf">🌿🌿🌿🌿</span> <span class="muted">coolest</span></td>
+          <td class="muted">10 photos</td></tr><tr onclick="openLoc('mountrainier')">
+          <td><b>Mount Rainier</b></td><td>Tour ~2.5h each way</td>
+          <td><span class="pill haul">a haul</span></td>
+          <td><span class="leaf">🌿🌿🌿🌿</span> <span class="muted">coolest</span></td>
+          <td class="muted">10 photos</td></tr><tr onclick="openLoc('snoqualmie')">
+          <td><b>Snoqualmie Falls</b></td><td>~45 min / half-day tour</td>
+          <td><span class="pill medium">some transit</span></td>
+          <td><span class="leaf">🌿🌿🌿</span> <span class="muted">cooler</span></td>
+          <td class="muted">10 photos</td></tr><tr onclick="openLoc('olympic')">
+          <td><b>Olympic National Park</b></td><td>Tour / ferry+bus ~3h+</td>
+          <td><span class="pill haul">a haul</span></td>
+          <td><span class="leaf">🌿🌿🌿🌿</span> <span class="muted">coolest</span></td>
+          <td class="muted">10 photos</td></tr></tbody>
+  </table>
+</div>
+
+
+        <div class="modal" id="m-sanfrancisco" role="dialog" aria-modal="true" aria-label="San Francisco">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Home base · Home base · <span class="leaf">🌿🌿🌿🌿</span> coolest</span>
+                <h2>San Francisco <span class="jp">home base</span></h2>
+                <p class="mhook">Cool, fog-cooled summer days where a sweater beats any sunscreen.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-sanfrancisco">flowchart TD
+n0["Slow morning coffee + pastries in Hayes Valley"] --> n1["Cable car up Nob Hill for Alcatraz + bay vistas"] --> n2["Oysters at the Ferry Building marketplace"] --> n3["Flat bayside walk along Crissy Field"] --> n4["Ferry across to Sausalito for the afternoon"] --> n5["Cocktails + dinner back in Hayes Valley"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">Stay in Hayes Valley: quiet, walkable, boutiques and bars, near the Muni metro.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Ferry to Sausalito: a 30-min scenic glide past the Golden Gate, easy waterfront stroll.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Ferry Building food hall: oysters, coffee, wine; Hayes Valley craft cocktails after.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">No car needed: tap-to-pay on Muni, BART, the cable cars, and ferries.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Late August is peak fog: ~55–70°F, a morning marine layer, near-zero rain — the coolest base on the coast.</span></div></div>
+            <h3 class="galh">Gallery · 12 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/01.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/01.jpg" alt="pre-existing">
+                <figcaption>pre-existing</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/02.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/02.jpg" alt="pre-existing">
+                <figcaption>pre-existing</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/03.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/03.jpg" alt="San Francisco - Golden Gate Bridge">
+                <figcaption>San Francisco - Golden Gate Bridge</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/04.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/04.jpg" alt="San Francisco Ferry Building">
+                <figcaption>San Francisco Ferry Building</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/05.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/05.jpg" alt="San Francisco Cable Car on California Street">
+                <figcaption>San Francisco Cable Car on California Street</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/06.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/06.jpg" alt="San Francisco skyline from Marin Headlands">
+                <figcaption>San Francisco skyline from Marin Headlands</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/07.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/07.jpg" alt="Sausalito Waterfront with SF Background">
+                <figcaption>Sausalito Waterfront with SF Background</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/08.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/08.jpg" alt="Lands End, San Francisco">
+                <figcaption>Lands End, San Francisco</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/09.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/09.jpg" alt="Painted Ladies - San Francisco">
+                <figcaption>Painted Ladies - San Francisco</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/10.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/10.jpg" alt="Crissy Field, San Francisco (Unsplash)">
+                <figcaption>Crissy Field, San Francisco (Unsplash)</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/11.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/11.jpg" alt="San Francisco skyline from Coit Tower">
+                <figcaption>San Francisco skyline from Coit Tower</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sanfrancisco/12.jpg',this)">
+                <img loading="lazy" src="assets/img/sanfrancisco/12.jpg" alt="Seal Rocks - Lands End (San Francisco)">
+                <figcaption>Seal Rocks - Lands End (San Francisco)</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-sausalito-muirwoods" role="dialog" aria-modal="true" aria-label="Sausalito &amp; Muir Woods">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · Ferry ~30 min · <span class="leaf">🌿🌿🌿🌿</span> coolest</span>
+                <h2>Sausalito &amp; Muir Woods <span class="jp">ferry + redwoods</span></h2>
+                <p class="mhook">A bay ferry to cathedral redwoods, then a harbor lunch facing the skyline.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-sausalito-muirwoods">flowchart TD
+n0["Ferry from the Ferry Building to Sausalito"] --> n1["Muir Woods shuttle (reserve ahead)"] --> n2["Flat redwood boardwalk loop"] --> n3["Back to Sausalito for harbor lunch"] --> n4["Waterfront stroll + gelato"] --> n5["Golden-hour ferry home"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">Golden Gate Ferry from the Ferry Building to Sausalito (~30 min) — the ride itself is half the day, skyline and bridge views.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Muir Woods: take the Muir Woods Shuttle (Route 66) from Sausalito — a parking reservation at gomuirwoods.com is REQUIRED; book ahead.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">The redwoods are an easy, flat boardwalk loop through Cathedral and Bohemian Groves — cool, hushed, ancient. No real climbing.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Sausalito waterfront: lunch on the harbor, gelato, galleries, the houseboats — relaxed downtime with SF across the water.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Car-free verdict: very doable. Lazier option — skip Muir and just ferry to Sausalito for a long lunch.</span></div></div>
+            <h3 class="galh">Gallery · 11 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/01.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/01.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/02.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/02.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/03.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/03.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/04.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/04.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/05.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/05.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/06.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/06.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/07.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/07.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/08.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/08.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/09.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/09.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/10.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/10.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/sausalito-muirwoods/11.jpg',this)">
+                <img loading="lazy" src="assets/img/sausalito-muirwoods/11.jpg" alt="Sausalito &amp; Muir Woods">
+                <figcaption>Sausalito &amp; Muir Woods</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-winecountry" role="dialog" aria-modal="true" aria-label="Wine Country">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · Tour ~1h transfer · <span class="leaf">🌿🌿</span> cool</span>
+                <h2>Wine Country <span class="jp">Sonoma · Napa</span></h2>
+                <p class="mhook">Sun-warmed vines, slow pours, harvest in the air — the trip&#x27;s pure downtime day.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-winecountry">flowchart TD
+n0["Morning SF hotel pickup (small-group tour)"] --> n1["Cross into wine country, harvest vines en route"] --> n2["First tasting on a scenic patio (e.g. Gundlach Bundschu)"] --> n3["Picnic / farm-to-table vineyard lunch"] --> n4["Two more backroad wineries, taste freely"] --> n5["Late-afternoon return to SF"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">Best car-free option: a small-group guided tour with SF hotel pickup (~$139pp, 3 backroad wineries + picnic lunch). A designated driver means everyone tastes freely.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">For this crew, pick Sonoma over Napa — laid-back, less crowded, family-owned, walk-ins welcome, 30+ walkable tasting rooms on the historic Plaza. Napa is more polished but pricier and busier.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">A relaxed anchor: Gundlach Bundschu, California's oldest family winery — a lakeside patio with string lights and picnic tables. Pair with lunch on Sonoma Plaza or Napa's Oxbow Market (Hog Island oysters).</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Late Aug–early Sep is crush season: grapes picked overnight, barrel tastings, harvest dinners and grape-stomps. Inland days run warm (~80s°F) but dry — a sunny contrast to foggy 'Fogust' SF.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Car-free verdict: arguably the smart way to do it (tasting + driving don't mix). The SF-pickup tour is zero-logistics; the Napa Wine Train is the upscale splurge. Book ahead — peak season.</span></div></div>
+            <h3 class="galh">Gallery · 10 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/01.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/01.jpg" alt="Napa Valley vineyard and winery">
+                <figcaption>Napa Valley vineyard and winery</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/02.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/02.jpg" alt="Wine Country - Napa Valley Vineyard on the side of a road">
+                <figcaption>Wine Country - Napa Valley Vineyard on the side of a road</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/03.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/03.jpg" alt="Sonoma vineyard - July 2025">
+                <figcaption>Sonoma vineyard - July 2025</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/04.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/04.jpg" alt="Vineyards in Russian River, Sonoma">
+                <figcaption>Vineyards in Russian River, Sonoma</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/05.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/05.jpg" alt="Castello di Amorosa Wine Tasting, Napa Valley">
+                <figcaption>Castello di Amorosa Wine Tasting, Napa Valley</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/06.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/06.jpg" alt="Sterling Vineyards Wine Tasting, Napa Valley">
+                <figcaption>Sterling Vineyards Wine Tasting, Napa Valley</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/07.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/07.jpg" alt="Viansa Vineyards &amp; Winery, Sonoma Valley">
+                <figcaption>Viansa Vineyards &amp; Winery, Sonoma Valley</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/08.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/08.jpg" alt="Napa Valley Wine Train locomotive - September 2022">
+                <figcaption>Napa Valley Wine Train locomotive - September 2022</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/09.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/09.jpg" alt="Napa Valley Wine Train Silverado car interior">
+                <figcaption>Napa Valley Wine Train Silverado car interior</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/winecountry/10.jpg',this)">
+                <img loading="lazy" src="assets/img/winecountry/10.jpg" alt="Rutherford Hill Wine Cave">
+                <figcaption>Rutherford Hill Wine Cave</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-berkeley" role="dialog" aria-modal="true" aria-label="Berkeley">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · BART ~30 min · <span class="leaf">🌿🌿🌿</span> cooler</span>
+                <h2>Berkeley <span class="jp">BART · California cuisine</span></h2>
+                <p class="mhook">Campus strolls, hilltop bay views, and the birthplace of California cuisine.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-berkeley">flowchart TD
+n0["Coffee at the original Peet's + Cheese Board pastry"] --> n1["BART to campus: Sproul, Glade, up the Campanile"] --> n2["Cheese Board pizza lunch"] --> n3["Browse Telegraph Ave or Fourth Street"] --> n4["Uphill to Indian Rock for sunset"] --> n5["Optional Chez Panisse dinner, BART home"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">BART from Embarcadero/Montgomery to Downtown Berkeley (~30 min), exit two blocks from campus — no car needed.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">UC Berkeley + Sather Tower (the Campanile): Sproul Plaza, Memorial Glade, and the elevator up the 307-ft tower for Bay and Golden Gate views.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">The 'Gourmet Ghetto' on North Shattuck: Chez Panisse (Alice Waters' farm-to-table birthplace), Cheese Board Collective pizza, the original Peet's.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Easy hill view: walk or bus up to Indian Rock Park for sunset over the Bay; Berkeley Marina for flat waterfront skyline views.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">A chill food-and-views day, not big nature — Tilden Park is lovely but its weekend bus makes it a car-free stretch.</span></div></div>
+            <h3 class="galh">Gallery · 10 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/01.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/01.jpg" alt="UC Berkeley campus overview from the hills">
+                <figcaption>UC Berkeley campus overview from the hills</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/02.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/02.jpg" alt="UC Berkeley campus">
+                <figcaption>UC Berkeley campus</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/03.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/03.jpg" alt="Sather Tower (Campanile), east face">
+                <figcaption>Sather Tower (Campanile), east face</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/04.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/04.jpg" alt="Sather Tower from Memorial Glade">
+                <figcaption>Sather Tower from Memorial Glade</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/05.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/05.jpg" alt="View of Berkeley and SF Bay from the Campanile">
+                <figcaption>View of Berkeley and SF Bay from the Campanile</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/06.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/06.jpg" alt="Berkeley Marina / Cesar Chavez Park bay view">
+                <figcaption>Berkeley Marina / Cesar Chavez Park bay view</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/07.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/07.jpg" alt="Sunset view of Berkeley from the Berkeley Marina">
+                <figcaption>Sunset view of Berkeley from the Berkeley Marina</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/08.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/08.jpg" alt="Lake Anza, Tilden Park">
+                <figcaption>Lake Anza, Tilden Park</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/09.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/09.jpg" alt="Telegraph Avenue looking north">
+                <figcaption>Telegraph Avenue looking north</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/berkeley/10.jpg',this)">
+                <img loading="lazy" src="assets/img/berkeley/10.jpg" alt="Telegraph Avenue street vendors">
+                <figcaption>Telegraph Avenue street vendors</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-seattle" role="dialog" aria-modal="true" aria-label="Seattle">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Home base · Home base · <span class="leaf">🌿🌿🌿🌿</span> coolest</span>
+                <h2>Seattle <span class="jp">home base 2</span></h2>
+                <p class="mhook">A mild, dry, sun-washed bay city — coffee, ferries and mountain skylines.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-seattle">flowchart TD
+n0["Third-wave coffee + pastry, stroll into the core"] --> n1["Pike Place Market — fish-throwers, stalls, a bite"] --> n2["Overlook Walk down to Waterfront Park + piers"] --> n3["Afternoon ferry across Elliott Bay for the skyline view"] --> n4["Early bay-view oyster dinner"] --> n5["Sunset up at Kerry Park, then a craft-beer nightcap"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">Stay Downtown / Belltown / Pioneer Square (Walk Scores 97–99): hotels steps from Pike Place, the waterfront and a Link light-rail stop; the flat core lets the parents wander car-free.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Pike Place → the new (2024) Overlook Walk → Waterfront Park: an accessible ramp-and-elevator bridge with 360° bay, Olympics and Rainier views; then Kerry Park for the postcard skyline.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Coffee-and-seafood downtime: third-wave roasters (Victrola, Lighthouse), bay-view oyster houses (Elliott's, The Crab Pot), and Ballard/Fremont breweries for the slow afternoon.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Fully car-free: Link light rail from the airport to downtown in ~38 min; ferries from Pier 52 cross Elliott Bay to Bainbridge in ~35 min — a scenic ride with zero driving.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Early September is Seattle's best window: warm-dry tail of summer, highs ~70–76°F, cool nights, almost no rain and the year's lowest humidity — exactly the heat-escape they wanted.</span></div></div>
+            <h3 class="galh">Gallery · 13 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/seattle/01.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/01.jpg" alt="Seattle hero (pre-existing, retained)">
+                <figcaption>Seattle hero (pre-existing, retained)</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/02.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/02.jpg" alt="Seattle (pre-existing, retained)">
+                <figcaption>Seattle (pre-existing, retained)</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/03.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/03.jpg" alt="MV Suquamish ferry with Mount Rainier and the Seattle skyline">
+                <figcaption>MV Suquamish ferry with Mount Rainier and the Seattle skyline</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/04.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/04.jpg" alt="Seattle skyline from Kerry Park, September">
+                <figcaption>Seattle skyline from Kerry Park, September</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/05.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/05.jpg" alt="Pike Place Market storefront and Public Market sign">
+                <figcaption>Pike Place Market storefront and Public Market sign</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/06.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/06.jpg" alt="Pike Place Market produce and flower stalls">
+                <figcaption>Pike Place Market produce and flower stalls</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/07.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/07.jpg" alt="Seattle waterfront panorama on Elliott Bay">
+                <figcaption>Seattle waterfront panorama on Elliott Bay</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/08.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/08.jpg" alt="Seattle waterfront viewed from a ferry on Elliott Bay">
+                <figcaption>Seattle waterfront viewed from a ferry on Elliott Bay</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/09.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/09.jpg" alt="Downtown Seattle skyline from Kerry Park (daytime)">
+                <figcaption>Downtown Seattle skyline from Kerry Park (daytime)</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/10.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/10.jpg" alt="Kerry Park overlook with Space Needle and skyline, golden hour">
+                <figcaption>Kerry Park overlook with Space Needle and skyline, golden hour</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/11.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/11.jpg" alt="Space Needle in the afternoon">
+                <figcaption>Space Needle in the afternoon</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/12.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/12.jpg" alt="Seattle Great Wheel on the Elliott Bay waterfront, summer">
+                <figcaption>Seattle Great Wheel on the Elliott Bay waterfront, summer</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/seattle/13.jpg',this)">
+                <img loading="lazy" src="assets/img/seattle/13.jpg" alt="MV Kitsap ferry arriving in Seattle on Elliott Bay">
+                <figcaption>MV Kitsap ferry arriving in Seattle on Elliott Bay</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-bainbridge" role="dialog" aria-modal="true" aria-label="Bainbridge Island">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · Ferry 35 min walk-on · <span class="leaf">🌿🌿🌿🌿</span> coolest</span>
+                <h2>Bainbridge Island <span class="jp">ferry day</span></h2>
+                <p class="mhook">A skyline-and-Sound ferry glide to a strollable little island town.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-bainbridge">flowchart TD
+n0["Walk onto the WSF ferry at Colman Dock"] --> n1["35-min ride for skyline + Sound views"] --> n2["Coffee at Pegasus, stroll into Winslow"] --> n3["Winslow Way shops + Eagle Harbor trail"] --> n4["Lunch + a winery or brewery tasting"] --> n5["Free ferry home at golden hour"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">The 35-min Colman Dock walk-on ferry is the highlight — Seattle skyline, Elliott Bay, the Olympics, Rainier on a clear day. Free on the return.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Winslow's shops, cafés and restaurants start a flat 5-min walk off the boat — the whole core is walkable.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Wine & beer downtime on foot: Eleven Winery and Fletcher Bay tasting rooms, Bainbridge Brewing; lunch at Bruciato, Proper Fish or the Harbour Public House.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">The Eagle Harbor Waterfront Trail is an easy ~1-mi paved stroll with benches and art; Bloedel Reserve gardens optional (timed reservation + shuttle).</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Fully car-free: walk-on capacity is 2,000+, you're never turned away, and the BI Ride shuttle covers anything past Winslow.</span></div></div>
+            <h3 class="galh">Gallery · 10 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/01.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/01.jpg" alt="Seattle skyline + Space Needle seen from the Bainbridge ferry across Elliott Bay">
+                <figcaption>Seattle skyline + Space Needle seen from the Bainbridge ferry across Elliott Bay</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/02.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/02.jpg" alt="WSF ferry deck arriving/landing at Bainbridge Island Terminal with walk-on cyclists">
+                <figcaption>WSF ferry deck arriving/landing at Bainbridge Island Terminal with walk-on cyclists</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/03.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/03.jpg" alt="MV Suquamish ferry with Mount Rainier and the Seattle skyline">
+                <figcaption>MV Suquamish ferry with Mount Rainier and the Seattle skyline</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/04.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/04.jpg" alt="Aboard MV Tacoma heading toward Seattle from Bainbridge, Sound views">
+                <figcaption>Aboard MV Tacoma heading toward Seattle from Bainbridge, Sound views</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/05.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/05.jpg" alt="Sunny Winslow Way main street, walkable downtown shops near terminal">
+                <figcaption>Sunny Winslow Way main street, walkable downtown shops near terminal</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/06.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/06.jpg" alt="Eagle Harbor waterfront, Bainbridge Island">
+                <figcaption>Eagle Harbor waterfront, Bainbridge Island</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/07.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/07.jpg" alt="Eagle Harbor with moored boats, walkable from Winslow">
+                <figcaption>Eagle Harbor with moored boats, walkable from Winslow</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/08.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/08.jpg" alt="Bloedel Reserve panorama: green lawn, reflecting pool, conifers, manor house">
+                <figcaption>Bloedel Reserve panorama: green lawn, reflecting pool, conifers, manor house</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/09.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/09.jpg" alt="Bloedel Reserve garden grounds">
+                <figcaption>Bloedel Reserve garden grounds</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/bainbridge/10.jpg',this)">
+                <img loading="lazy" src="assets/img/bainbridge/10.jpg" alt="Seattle waterfront / Elliott Bay from the water (Colman Dock departure side)">
+                <figcaption>Seattle waterfront / Elliott Bay from the water (Colman Dock departure side)</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-mountrainier" role="dialog" aria-modal="true" aria-label="Mount Rainier">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · Tour ~2.5h each way · <span class="leaf">🌿🌿🌿🌿</span> coolest</span>
+                <h2>Mount Rainier <span class="jp">alpine marquee</span></h2>
+                <p class="mhook">A glacier giant and wildflower meadows — the jaw-drop view without the climb.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-mountrainier">flowchart TD
+n0["Early hotel pickup in downtown Seattle (~7–8am)"] --> n1["Scenic drive in via Nisqually + Longmire/falls stops"] --> n2["Paradise: paved Myrtle Falls walk + meadows"] --> n3["Lunch, then Reflection Lakes mirror view"] --> n4["Golden-hour viewpoints on the way back"] --> n5["Back to Seattle by ~6pm"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">Guided small-group day tour only — no transit reaches the park. Tour includes Seattle pickup, park fee and lunch (~$275pp), ~10–11h door to door.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Paradise (~5,400 ft) is the hub: the easy paved 0.5-mi Myrtle Falls stroll, the flat Reflection Lakes path, gentle meadow loops — scenic, not strenuous, ideal for the parents.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Early-Sep reality: peak bloom is mid-Jul–Aug, so meadows are fading but still scenic, with first fall color starting and thinner post-Labor-Day crowds.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">The views: Rainier above Myrtle Falls, the mountain mirrored at Reflection Lakes, Tatoosh panoramas, Narada and Christine Falls en route. Crisp, cool, high air.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Verdict: the marquee big-nature day of the Seattle leg — but car-dependent, so a guided tour (or a rental) is mandatory.</span></div></div>
+            <h3 class="galh">Gallery · 10 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/01.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/01.jpg" alt="Mount Rainier wildflower meadow with peak above">
+                <figcaption>Mount Rainier wildflower meadow with peak above</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/02.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/02.jpg" alt="Paradise meadow with Rainier, August">
+                <figcaption>Paradise meadow with Rainier, August</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/03.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/03.jpg" alt="Paradise meadow trail and peak">
+                <figcaption>Paradise meadow trail and peak</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/04.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/04.jpg" alt="Rainier above Myrtle Falls, late summer">
+                <figcaption>Rainier above Myrtle Falls, late summer</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/05.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/05.jpg" alt="Myrtle Falls with Rainier backdrop">
+                <figcaption>Myrtle Falls with Rainier backdrop</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/06.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/06.jpg" alt="Myrtle Falls and meadow">
+                <figcaption>Myrtle Falls and meadow</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/07.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/07.jpg" alt="Mount Rainier reflected in still water">
+                <figcaption>Mount Rainier reflected in still water</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/08.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/08.jpg" alt="Rainier reflected, Reflection Lakes area">
+                <figcaption>Rainier reflected, Reflection Lakes area</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/09.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/09.jpg" alt="Alpine lake reflection with wildflowers">
+                <figcaption>Alpine lake reflection with wildflowers</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/mountrainier/10.jpg',this)">
+                <img loading="lazy" src="assets/img/mountrainier/10.jpg" alt="Wide alpine meadow vista of Rainier">
+                <figcaption>Wide alpine meadow vista of Rainier</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-snoqualmie" role="dialog" aria-modal="true" aria-label="Snoqualmie Falls">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · ~45 min / half-day tour · <span class="leaf">🌿🌿🌿</span> cooler</span>
+                <h2>Snoqualmie Falls <span class="jp">waterfall half-day</span></h2>
+                <p class="mhook">A 268-ft thundering plunge, damn fine pie, and a little Twin Peaks magic.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-snoqualmie">flowchart TD
+n0["Morning pickup from Seattle — ~45 min east on I-90"] --> n1["Upper falls overlook (paved, 15–20 min)"] --> n2["Relaxed lunch or coffee at Salish Lodge"] --> n3["On to North Bend: Twede's pie under Mount Si"] --> n4["Optional Rattlesnake Lake or a valley winery"] --> n5["Back to Seattle by late afternoon"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">A free paved ADA overlook of the 268-ft falls; an optional 0.7-mi trail drops to a misty river-level view at the base.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Salish Lodge & Spa sits right atop the falls — country breakfast since 1916, a relaxed lounge lunch, or pizza and honey cocktails in The Attic.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">The lodge is the Twin Peaks 'Great Northern'; 10 min on is North Bend's Twede's Cafe (the Double R Diner) for cherry pie and 'damn fine coffee'.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Honest car-free: transit is rough (~90 min, ~3 transfers); best as a half-day guided tour or a 1-day rental that pairs the falls with North Bend and a valley winery.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Easy half-day verdict: genuinely low-effort scenery with real things to do; early Sep is warm, dry and quieter — go before 10am or after 3pm.</span></div></div>
+            <h3 class="galh">Gallery · 10 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/01.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/01.jpg" alt="Snoqualmie Falls thundering over cliff, green pines">
+                <figcaption>Snoqualmie Falls thundering over cliff, green pines</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/02.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/02.jpg" alt="Falls from the base with rainbow, Salish Lodge atop cliff">
+                <figcaption>Falls from the base with rainbow, Salish Lodge atop cliff</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/03.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/03.jpg" alt="Mist at the base of the falls, mossy green rock">
+                <figcaption>Mist at the base of the falls, mossy green rock</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/04.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/04.jpg" alt="South Fork Snoqualmie River, green forest (North Bend valley)">
+                <figcaption>South Fork Snoqualmie River, green forest (North Bend valley)</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/05.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/05.jpg" alt="Rattlesnake Lake and valley from Rattlesnake Ledge">
+                <figcaption>Rattlesnake Lake and valley from Rattlesnake Ledge</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/06.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/06.jpg" alt="Green Snoqualmie Valley panorama from the middle ledge">
+                <figcaption>Green Snoqualmie Valley panorama from the middle ledge</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/07.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/07.jpg" alt="Rattlesnake Ledge rim above lake, summer greenery">
+                <figcaption>Rattlesnake Ledge rim above lake, summer greenery</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/08.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/08.jpg" alt="Snoqualmie Falls plunge into pool, mossy walls">
+                <figcaption>Snoqualmie Falls plunge into pool, mossy walls</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/09.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/09.jpg" alt="Misty green river gorge below the falls">
+                <figcaption>Misty green river gorge below the falls</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/snoqualmie/10.jpg',this)">
+                <img loading="lazy" src="assets/img/snoqualmie/10.jpg" alt="Lush mossy old-growth forest, Rattlesnake Ledge trail">
+                <figcaption>Lush mossy old-growth forest, Rattlesnake Ledge trail</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="modal" id="m-olympic" role="dialog" aria-modal="true" aria-label="Olympic National Park">
+          <div class="modal-inner">
+            <button class="mclose" onclick="closeLoc()" aria-label="Close">×</button>
+            <div class="modal-head">
+              <div><span class="mkick">Day trip · Tour / ferry+bus ~3h+ · <span class="leaf">🌿🌿🌿🌿</span> coolest</span>
+                <h2>Olympic National Park <span class="jp">wild &amp; far (we checked)</span></h2>
+                <p class="mhook">Glacier peaks, moss-draped rainforest, turquoise lakes — the wild crown jewel.</p></div>
+            </div>
+            <div class="flowwrap"><div class="flowlabel">A day here — morning → night</div><pre class="mermaid flow" id="flow-olympic">flowchart TD
+n0["Walk onto the ~9:35a Seattle→Bainbridge ferry"] --> n1["Strait Shot bus to Port Angeles (~2h)"] --> n2["Lake Crescent + easy Marymere Falls stroll"] --> n3["Up to Hurricane Ridge: flat paved meadow loops"] --> n4["Panoramic Olympic-mountain views + picnic"] --> n5["Long reverse trip — or take the lower-stress guided tour"]
+class n0 fl;
+class n1 fl;
+class n2 fl;
+class n3 fl;
+class n4 fl;
+class n5 fl;
+classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
+            <div class="info"><div class="irow"><span class="ikey see"></span><span class="ival">Hurricane Ridge — subalpine meadows and panoramic Olympic-mountain views; the Big Meadow and Cirque Rim loops are flat, paved, ~0.5 mi each. September = golden grasses, snow gone.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Hoh Rain Forest — the magical Hall of Mosses loop (~1 mi, easy) but ~4h+ each way; realistically an overnight, not a day trip.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Car-free reality (Hurricane Ridge only): 9:35a Bainbridge ferry → Strait Shot bus → Port Angeles → summer shuttle to the Ridge; or a guided tour (~$95pp + ferry/bus, ~9h). Long and tightly timed.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Lake Crescent — a turquoise glacial lake with the easy 1.8-mi Marymere Falls trail; the natural scenic lunch stop en route.</span></div><div class="irow"><span class="ikey see"></span><span class="ival">Honest verdict: biggest-wow, lowest-feasibility. Hurricane Ridge is the realistic car-free day (jaw-dropping, not strenuous) but a real haul. Included so you know we checked — swap it in for Rainier if the wild green calls louder.</span></div></div>
+            <h3 class="galh">Gallery · 10 photos</h3>
+            <div class="gallery"><figure class="tile" onclick="lightbox(event,'assets/img/olympic/01.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/01.jpg" alt="Lake Crescent from Lake Crescent Lodge">
+                <figcaption>Lake Crescent from Lake Crescent Lodge</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/02.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/02.jpg" alt="Hoh Rainforest mossy logs">
+                <figcaption>Hoh Rainforest mossy logs</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/03.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/03.jpg" alt="Marymere Falls (Lake Crescent area waterfall)">
+                <figcaption>Marymere Falls (Lake Crescent area waterfall)</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/04.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/04.jpg" alt="Scene along Marymere Falls trail">
+                <figcaption>Scene along Marymere Falls trail</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/05.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/05.jpg" alt="Olympic National Park forest">
+                <figcaption>Olympic National Park forest</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/06.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/06.jpg" alt="Olympic National Forest">
+                <figcaption>Olympic National Forest</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/07.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/07.jpg" alt="Fog/mist forest trees, Olympic peninsula">
+                <figcaption>Fog/mist forest trees, Olympic peninsula</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/08.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/08.jpg" alt="Ozette Loop hike, Olympic peninsula coast/forest">
+                <figcaption>Ozette Loop hike, Olympic peninsula coast/forest</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/09.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/09.jpg" alt="Sol Duc Falls, Olympic National Park">
+                <figcaption>Sol Duc Falls, Olympic National Park</figcaption></figure><figure class="tile" onclick="lightbox(event,'assets/img/olympic/10.jpg',this)">
+                <img loading="lazy" src="assets/img/olympic/10.jpg" alt="Waterfall at river creek, Olympic forest">
+                <figcaption>Waterfall at river creek, Olympic forest</figcaption></figure></div>
+          </div>
+        </div>
+
+<div class="lb" id="lb" onclick="closeLB()"><img id="lbimg" src="" alt=""><p id="lbcap"></p></div>
+
+<footer>
+  <div>West Coast 2026 · Plan B (SF + Seattle hop) · built for the Aug–Sep 2026 trip · all photos Creative Commons (Openverse / Wikimedia)</div>
+  <ul class="credits"><li><b>San Francisco</b> — pre-existing · pre-existing</li>
+<li><b>San Francisco</b> — Gerd Eichmann · CC BY-SA</li>
+<li><b>San Francisco</b> — JaGa · CC BY-SA</li>
+<li><b>San Francisco</b> — Fred Hsu · CC BY-SA</li>
+<li><b>San Francisco</b> — Ryan Schwark · CC0</li>
+<li><b>San Francisco</b> — AsaQuathern · CC BY</li>
+<li><b>San Francisco</b> — Sharon Mollerus · CC BY</li>
+<li><b>San Francisco</b> — Sam Soneja · CC BY-SA</li>
+<li><b>San Francisco</b> — William Bout · CC0</li>
+<li><b>San Francisco</b> — Supercarwaar · CC BY-SA</li>
+<li><b>San Francisco</b> — Yair-haklai · CC BY-SA</li>
+<li><b>Sausalito &amp; Muir Woods</b> — Wikimedia Commons / Openverse · CC</li>
+<li><b>Wine Country</b> — Brocken Inaglory · CC BY-SA</li>
+<li><b>Wine Country</b> — Fred Hsu · CC BY-SA</li>
+<li><b>Wine Country</b> — Sarah Stierch (Missvain) · CC0</li>
+<li><b>Wine Country</b> — Simon Davison · CC BY</li>
+<li><b>Wine Country</b> — Jim G · CC BY</li>
+<li><b>Wine Country</b> — Sarah Stierch (Missvain) · CC BY</li>
+<li><b>Wine Country</b> — Grendelkhan · CC BY-SA</li>
+<li><b>Wine Country</b> — Frank Schulenburg · CC BY-SA</li>
+<li><b>Berkeley</b> — Wikimedia Commons / Openverse · CC</li>
+<li><b>Seattle</b> — pre-existing</li>
+<li><b>Seattle</b> — Wikimedia Commons / Openverse · CC</li>
+<li><b>Bainbridge Island</b> — Wikimedia Commons / Openverse · CC</li>
+<li><b>Mount Rainier</b> — CC BY-SA</li>
+<li><b>Snoqualmie Falls</b> — Wikimedia Commons / Openverse · CC</li>
+<li><b>Olympic National Park</b> — CC0</li></ul>
+</footer>
+
+<script>
+mermaid.initialize({startOnLoad:false,theme:"dark",securityLevel:"loose",flowchart:{curve:"basis"},
+  themeVariables:{fontFamily:"Helvetica Neue, Inter, sans-serif",fontSize:"14px"}});
+window.addEventListener("load",()=>{
+  const hub=document.querySelector(".hub .mermaid");
+  if(hub) mermaid.run({nodes:[hub]});
+});
+function openLoc(slug){
+  const m=document.getElementById("m-"+slug); if(!m)return;
+  m.classList.add("open"); document.body.style.overflow="hidden"; m.scrollTop=0;
+  const flow=m.querySelector(".mermaid.flow");
+  if(flow && !flow.dataset.rendered){
+    flow.dataset.rendered="1";
+    try{ mermaid.run({nodes:[flow]}); }catch(e){ flow.dataset.rendered=""; }
+  }
+}
+function closeLoc(){
+  document.querySelectorAll(".modal.open").forEach(m=>m.classList.remove("open"));
+  document.body.style.overflow="";
+}
+function lightbox(ev,src,fig){
+  ev.stopPropagation();
+  document.getElementById("lbimg").src=src;
+  const cap=fig.querySelector("figcaption");
+  document.getElementById("lbcap").textContent=cap?cap.textContent:"";
+  document.getElementById("lb").classList.add("open");
+}
+function closeLB(){document.getElementById("lb").classList.remove("open");}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLB();closeLoc();}});
+document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)closeLoc();}));
+</script>
+</body></html>
