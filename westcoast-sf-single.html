@@ -611,10 +611,14 @@ classDef fl fill:#1c212a,stroke:#3a4350,color:#e9ecf1,rx:8,ry:8;</pre></div>
 <script>
 mermaid.initialize({startOnLoad:false,theme:"dark",securityLevel:"loose",flowchart:{curve:"basis"},
   themeVariables:{fontFamily:"Helvetica Neue, Inter, sans-serif",fontSize:"14px"}});
-window.addEventListener("load",()=>{
+function renderHub(){
   const hub=document.querySelector(".hub .mermaid");
   if(hub) mermaid.run({nodes:[hub]});
-});
+}
+// Render as soon as the DOM is ready — NOT on window.load, which waits for
+// every gallery image to download and leaves the hub as raw text meanwhile.
+if(document.readyState!=="loading") renderHub();
+else document.addEventListener("DOMContentLoaded",renderHub);
 function openLoc(slug){
   const m=document.getElementById("m-"+slug); if(!m)return;
   m.classList.add("open"); document.body.style.overflow="hidden"; m.scrollTop=0;
